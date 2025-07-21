@@ -1,58 +1,79 @@
-🖥️ Windows Server 2022 Administration Lab
-🚀 Project Overview
-In this project, I set up and administered a Windows Server 2022 environment using VirtualBox. I configured Active Directory, DNS, DHCP, and Print Services roles, and joined both Windows 11 Enterprise and Linux clients (Ubuntu 24.04 and Rocky Linux) to my domain. This hands-on work gave me valuable experience managing a mixed-OS network with centralized authentication and resource management.
+# 🖥️ Windows Server 2022 Administration Lab
 
-🛠️ Technologies I Used
-Windows Server 2022
+## 🚀 Project Overview
 
-Windows 11 Enterprise (Client VM)
+This project showcases my implementation of a Windows Server 2022 environment on VirtualBox. I performed end-to-end configuration of Active Directory, DNS, DHCP, and Print Services. I also joined both Windows and Linux clients to the domain, managing a hybrid network with centralized control using Active Directory.
 
-Ubuntu 24.04 Desktop (Linux Client VM)
+## 🛠️ Tools & Technologies
 
-Rocky Linux (Linux Client VM)
+- **VirtualBox** for virtualization
+- **Windows Server 2022 Evaluation Center**
+- **Windows 11 Enterprise** (Client VM)
+- **Ubuntu 24.04 Desktop** (Linux Client VM)
+- **Rocky Linux** (Linux Client VM)
+- **Active Directory Domain Services (AD DS)**
+- **DNS Server**
+- **DHCP Server**
+- **Print and Document Services**
+- **RealmD / SSSD** for Linux integration
+- **IONOS** for domain registration
+- **AWS Route 53** for external DNS resolution
 
-VirtualBox for virtualization
+## 📋 What I Did
 
-Active Directory Domain Services (AD DS)
+### 🖥️ Server Configuration
 
-DNS Server
+- Installed Windows Server 2022 on a VirtualBox VM and configured a **static IP**.
+- Installed and configured:
+  - Active Directory Domain Services (AD DS)
+  - DNS Server
+  - DHCP Server
+  - Print and Document Services
+- Promoted the server to domain controller for my custom domain: `physicstutors.org`.
+- Configured DNS zones and DHCP scope to manage IP distribution across the network.
+- Enabled file and printer sharing on the domain controller.
 
-DHCP Server
+### 🧑‍💻 Windows Client
 
-Print and Document Services
+- Joined **Windows 11 Enterprise** VM to the domain.
+- Verified successful domain join and tested login with Active Directory credentials.
 
-RealmD / SSSD for Linux AD integration
+### 🐧 Linux Clients (Ubuntu + Rocky)
 
-IONOS domain registration and AWS Route53 DNS management
+- Installed `realm`, `sssd`, and other dependencies on **Ubuntu 24.04** and **Rocky Linux**.
+- Configured Linux clients to join the Active Directory domain using `realm join`.
+- Verified domain membership and successfully logged in using AD credentials.
 
-📋 What I Did
-Server Setup
-Installed Windows Server 2022 on a VirtualBox VM and assigned a static IP
+## 📂 Project Folder Structure
 
-Installed and configured Active Directory Domain Services, DNS, DHCP, and Print Services
+```
+Windows-Server-Administration/
+├── screenshots/
+│   ├── Windows-Client/ #screentshots
+│   ├── Ubuntu-Client/ #screentshots
+│   └── Rocky-Linux-Client/ #screnshots
+├── Reports/
+│   └── documentation and troubleshooting steps
+└── README.md (this file)
+```
 
-Promoted the server to domain controller for my domain, physicstutors.org
+## 📸 Screenshots
 
-Managed DNS zones and created DHCP scopes for network management
+All screenshots of configurations and steps are stored in the `screenshots/` folder, organized by client OS:
 
-Client Setup
-Joined Windows 11 Enterprise VM to my Active Directory domain and tested user login
+- `Windows-Client/`
+- `Ubuntu-Client/`
+- `Rocky-Linux-Client/`
 
-On Ubuntu 24.04 and Rocky Linux clients, installed necessary packages and joined them to the domain using RealmD and SSSD
+## 🎓 Key Takeaways
 
-Verified successful domain join and tested domain user authentication on Linux clients
+- Set up and promoted a domain controller on Windows Server 2022
+- Managed DNS, DHCP, and Print Services
+- Joined Windows and Linux machines to a centralized domain
+- Implemented file and printer sharing across the network
+- Handled external domain integration via IONOS and AWS Route 53
 
-📸 Screenshots
-I have screenshots documenting each step and configuration stored in the screenshots/ folder for reference.
+---
 
-🎓 What I Learned
-Deploying and managing a Windows Server 2022 domain controller
-
-Configuring DNS, DHCP, and print sharing in Active Directory
-
-Integrating Linux clients with a Windows Active Directory domain
-
-Managing users, groups, and organizational units in AD
-
-Handling external DNS with IONOS and AWS Route53
+*Prepared by: Yinka Ajibola*
 
