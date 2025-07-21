@@ -29,8 +29,8 @@ This project showcases my implementation of a Windows Server 2022 environment on
   - DNS Server
   - DHCP Server
   - Print and Document Services
-- Promoted the server to domain controller for my custom domain: `physicstutors.org`.
-- Configured DNS zones and DHCP scope to manage IP distribution across the network.
+- Promoted the server to a domain controller for my custom domain: `physicstutors.org`.
+- Configured DNS zones and DHCP scopes to manage IP distribution across the network.
 - Enabled file and printer sharing on the domain controller.
 
 ### 🧑‍💻 Windows Client
